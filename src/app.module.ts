@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { OrderModule } from './order/order.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Order } from './order/entities/order.entity';
+import { DataSource } from 'typeorm';
 
 @Module({
   imports: [
@@ -18,4 +19,6 @@ import { Order } from './order/entities/order.entity';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) {}
+}
