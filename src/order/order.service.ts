@@ -28,7 +28,7 @@ export class OrderService {
   }
 
   async update(id: number, updateOrderDto: UpdateOrderDto) {
-   await this.orderRepository.update(id, updateOrderDto);
+    await this.orderRepository.update(id, updateOrderDto);
     return this.findOne(id);
   }
 
